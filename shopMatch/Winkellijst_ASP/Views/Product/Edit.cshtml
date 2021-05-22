@@ -1,0 +1,48 @@
+﻿@model Winkellijst_ASP.ViewModel.ProductViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Bewerk Product</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Product.ProductId" />
+            <div class="form-group">
+                <label asp-for="Product.Naam" class="control-label"></label>
+                <input asp-for="Product.Naam" class="form-control" />
+                <span asp-validation-for="Product.Naam" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Prijs" class="control-label"></label>
+                <input asp-for="Product.Prijs" class="form-control" />
+                <span asp-validation-for="Product.Prijs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.Beschrijving" class="control-label"></label>
+                <input asp-for="Product.Beschrijving" class="form-control" />
+                <span asp-validation-for="Product.Beschrijving" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Product.AfdelingId" class="control-label"></label>
+                <select asp-for="Product.AfdelingId" class="form-control" asp-items="Model.Afdeling"></select>
+                <span asp-validation-for="Product.AfdelingId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Bewaar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Terug naar productlijst</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

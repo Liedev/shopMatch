@@ -1,0 +1,29 @@
+﻿@model Winkellijst_ASP.ViewModel.WinkellijstCreateViewModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2> Maak een nieuwe lijst !</h2>
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div class="form-group">
+                <label asp-for="Winkellijst.Naam" class="control-label"></label>
+                <input asp-for="Winkellijst.Naam" class="form-control" />
+                <span asp-validation-for="Winkellijst.Naam" class="text-danger"></span>
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Nieuwe Lijst" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+<p>
+    <a class="btn btn-primary" asp-action="Index">Mijn Winkellijsten</a>
+</p>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

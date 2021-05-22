@@ -1,0 +1,45 @@
+﻿@page
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Log in";
+}
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Welkom bij Shop Match !</h5>
+                        <form id="account" method="post" class="form-signin">
+                            <label asp-for="Input.Email"></label>
+                            <div class="form-label-group">
+                                <input asp-for="Input.Email" class="form-control" autofocus>
+                                <span asp-validation-for="Input.Email" class="text-danger"></span>
+                            </div>
+                            <label asp-for="Input.Paswoord"></label>
+                            <div class="form-label-group">
+                                <input asp-for="Input.Paswoord" class="form-control">
+                                <span asp-validation-for="Input.Paswoord" class="text-danger"></span>
+                            </div>
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="row">
+                                <div class="col">
+                                    <label>
+                                        <a class="text-right" asp-page="./Register" asp-route-returnUrl="@Model.ReturnUrl">Registreren</a>
+                                    </label>
+                                </div>
+                                <div class="col">
+                                    <label>
+                                        <a asp-page="./ForgotPassword">Wachtwoord vergeten</a>
+                                    </label>
+                                </div>
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Log In</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

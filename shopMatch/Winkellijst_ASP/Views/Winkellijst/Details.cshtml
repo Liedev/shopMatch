@@ -1,0 +1,62 @@
+﻿@model Winkellijst_ASP.Models.WinkelLijst
+
+@using Winkellijst_ASP.Helpers
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h3>Lijst: @Model.Naam</h3>
+<hr />
+
+<dl class="row">
+    <dt class="col-sm-3">
+        Aanmaakdatum:
+    </dt>
+    <dd class="col">
+        @Model.AanmaakDatum.TimeAgo()
+    </dd>
+</dl>
+<a class="btn btn-dark" asp-controller="AddProducts" asp-action="Index" asp-route-id="@Model.WinkelLijstId">+ Producten Toevoegen</a>
+<a class="btn btn-primary " asp-action="Index">Terug naar Winkellijstoverzicht</a>
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>
+                Naam
+            </th>
+            <th>
+                Prijs
+            </th>
+            <th>
+                Beschrijving
+            </th>
+            <th>
+                Afdeling
+            </th>
+            <th>Aantal</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (WinkelLijstProduct winkelLijstProduct in Model.WinkelLijstProducts)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => winkelLijstProduct.Product.Naam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => winkelLijstProduct.Product.Prijs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => winkelLijstProduct.Product.Beschrijving)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => winkelLijstProduct.Product.Afdeling.Naam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => winkelLijstProduct.Aantal)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

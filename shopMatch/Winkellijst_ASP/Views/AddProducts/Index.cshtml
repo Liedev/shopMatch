@@ -1,0 +1,72 @@
+﻿@model Winkellijst_ASP.ViewModel.AddProductsViewModel
+
+@{
+    ViewData["Title"] = "Producten toevoegen aan " + Model.List.Naam;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>
+    Producten toevoegen aan
+    <a asp-controller="WinkelLijst" asp-action="Details" asp-route-id="@Model.List.WinkelLijstId">@Model.List.Naam</a>
+</h3>
+<hr />
+<form asp-action="Search" method="get">
+    <div class="form-actions no-color">
+        <p>
+            Zoek een product:
+            <input type="hidden" name="id" value="@Model.List.WinkelLijstId" />
+            <input asp-for="q" />
+            <input type="submit" value="Zoeken" class="btn btn-primary" />
+            <a asp-action="Index" asp-route-id="@Model.List.WinkelLijstId" class="btn btn-primary">Volledige lijst</a>
+        </p>
+    </div>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Products[0].Naam)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products[0].Prijs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products[0].Beschrijving)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Products[0].Afdeling)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Product product in Model.Products)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => product.Naam)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => product.Prijs)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => product.Beschrijving)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => product.Afdeling.Naam)
+                </td>
+                <td>
+                    <form method="post" asp-action="Create" class="form-inline">
+                        <div class="form-group mr-1">
+                            <input type="hidden" asp-for="WinkelLijstProduct.WinkelLijstId" value="@Model.List.WinkelLijstId" />
+                            <input type="hidden" asp-for="WinkelLijstProduct.ProductId" value="@product.ProductId" />
+                            <label asp-for="WinkelLijstProduct.Aantal" class="sr-only">Aantal</label>
+                            <input asp-for="WinkelLijstProduct.Aantal" class="form-control" />
+                        </div>
+                        <button type="submit" class="btn btn-primary" title="Toevoegen">Toevoegen</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

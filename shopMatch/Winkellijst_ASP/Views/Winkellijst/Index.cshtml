@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Winkellijst_ASP.Models.WinkelLijst>
+
+@using Winkellijst_ASP.Helpers
+
+@{
+    ViewData["Title"] = "Mijn Winkellijsten";
+}
+
+<div class="h2"> Mijn Winkellijsten</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Naam
+            </th>
+            <th>
+                Aanmaakdatum
+            </th>
+            <th>
+                Aantal producten
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a asp-action="Details" asp-route-id="@item.WinkelLijstId">@Html.DisplayFor(modelItem => item.Naam)</a>
+                </td>
+                <td>
+                    @item.AanmaakDatum.TimeAgo()
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WinkelLijstProducts.Count)
+                </td>
+                <td class="text-right">
+                    <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.WinkelLijstId"><i class="fas fa-book-open"></i> Bewerk Naam</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.WinkelLijstId"><i class="fas fa-trash-alt"></i> Verwijder</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<p>
+    <a class="btn btn-primary" asp-action="Create"> Maak een nieuwe lijst aan !</a>
+    <a class="btn btn-secondary" asp-controller="Product">Producten beheren</a>
+</p>

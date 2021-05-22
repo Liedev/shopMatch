@@ -1,0 +1,25 @@
+﻿@model Winkellijst_ASP.ViewModel.WinkellijstEditViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h3> Bewerk deze winkellijst</h3>
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="Winkellijst.WinkelLijstId" />
+    <div class="form-group">
+        <label asp-for="Winkellijst.Naam" class="control-label"></label>
+        <input asp-for="Winkellijst.Naam" class="form-control" />
+        <span asp-validation-for="Winkellijst.Naam" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Bewaar" class="btn btn-primary" />
+        <a class="btn btn-primary" asp-action="Index">Terug naar Winkellijst</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

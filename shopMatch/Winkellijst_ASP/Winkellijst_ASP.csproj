@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>51ff9d48-1a00-4f90-bff9-8e5d5c6d7f2b</UserSecretsId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Migrations\20201120143308_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201120143308_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201125183514_ChangeWinkellijstToHoldProducts.cs" />
+    <Compile Remove="Migrations\20201125183514_ChangeWinkellijstToHoldProducts.Designer.cs" />
+    <Compile Remove="Migrations\20201125183724_ChangeWinkellijstToHoldProducts.cs" />
+    <Compile Remove="Migrations\20201125183724_ChangeWinkellijstToHoldProducts.Designer.cs" />
+    <Compile Remove="Migrations\20201125184429_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201125184429_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201125190637_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201125190637_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201125191140_InitialCreate.cs" />
+    <Compile Remove="Migrations\20201125191140_InitialCreate.Designer.cs" />
+    <Compile Remove="Migrations\20201125193331_EditedProduct.cs" />
+    <Compile Remove="Migrations\20201125193331_EditedProduct.Designer.cs" />
+    <Compile Remove="Migrations\20201126143312_AddedBeschrijvingInProductAndAantalInWinkellijstProduct.cs" />
+    <Compile Remove="Migrations\20201126143312_AddedBeschrijvingInProductAndAantalInWinkellijstProduct.Designer.cs" />
+    <Compile Remove="Migrations\20201126145414_ChangedLocationHoeveelheidFromProductToWinkelLijstProduct.cs" />
+    <Compile Remove="Migrations\20201126145414_ChangedLocationHoeveelheidFromProductToWinkelLijstProduct.Designer.cs" />
+    <Compile Remove="Migrations\20201201193115_WinkellijstNaam.cs" />
+    <Compile Remove="Migrations\20201201193115_WinkellijstNaam.Designer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Font.Awesome" Version="5.15.1" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.3.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.4" />
+    <PackageReference Include="SendGrid" Version="9.21.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.8.0" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind>None</TypeScriptModuleKind>
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+</Project>

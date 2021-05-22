@@ -1,0 +1,16 @@
+﻿@model Winkellijst_ASP.Models.WinkelLijst
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3> Wilt u deze deze lijst verwijderen ?</h3>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="WinkelLijstId" />
+    <div class="form-group">
+        <p>Naam: @Html.DisplayFor(modelItem => modelItem.Naam)</p>
+    </div>
+    <input type="submit" value="Ja" class="btn btn-danger" />
+    <button class="btn btn-primary" asp-action="Index">Neen, Terug naar Winkellijst</button>
+</form>

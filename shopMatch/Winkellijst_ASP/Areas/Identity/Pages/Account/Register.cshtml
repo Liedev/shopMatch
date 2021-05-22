@@ -1,0 +1,36 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Registreren";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+            <div class="card card-signin my-5">
+                <div class="card-body">
+                    <form class="form-signin" asp-route-returnUrl="@Model.ReturnUrl" method="post">
+                        <h5 class="card-title text-center">Registreer je hier !</h5>
+                        <label asp-for="Input.Email"></label>
+                        <div class="form-label-group">
+                            <input asp-for="Input.Email" class="form-control" />
+                            <span asp-validation-for="Input.Email" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Input.Wachtwoord"></label>
+                        <div class="form-label-group">
+                            <input asp-for="Input.Wachtwoord" class="form-control" />
+                            <span asp-validation-for="Input.Wachtwoord" class="text-danger"></span>
+                        </div>
+                        <label asp-for="Input.BevestigWachtwoord"></label>
+                        <div class="form-label-group">
+                            <input asp-for="Input.BevestigWachtwoord" class="form-control" />
+                            <span asp-validation-for="Input.BevestigWachtwoord" class="text-danger"></span>
+                        </div>
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Registreren</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
