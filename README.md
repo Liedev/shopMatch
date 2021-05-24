@@ -6,7 +6,7 @@
 The project is in Dutch. <br/>
 The documentation is in Dutch.
 
-## What Is My Anime Tracker
+## What Is ShopMatch
 
 A .net core mvvm code first project with fluent validation where people could add products to a shopping cart. 
 
